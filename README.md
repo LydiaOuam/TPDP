@@ -45,12 +45,19 @@ X_test = scaler.fit_transform(X_test)
 
 ### Les prédictions.
 On a fait des prédictions sur les X_test qu'on a pas mis dans l'entrainement du modèle.
-Puis comme les résultat de la prédictions sont des réels entre 0 et 1, donc on a arrondit les résultats pour avoir 0 et 1. Enfin on a comparé les résultats obtenu du modèles avec les y_test qu'on mis de coté à partir du dataset.
+Puis comme les résultat de la prédictions sont des réels entre 0 et 1, donc on a arrondit les résultats pour avoir 0 et 1. Enfin on a comparé les résultats obtenu du modèle avec les y_test qu'on mis de coté à partir du dataset.
 
 La matrice de confusion :
 ![matrice](https://github.com/LydiaOuam/TPDP/assets/84903904/767f64b3-0d53-4028-8b26-868ad5127a45)
 
-Rapport de classification : 
+#### Explication de la matrice de confusion  : 
+Il y a 1564 échantillons qui ont été correctement classés comme négatifs (classe négative).
+Il y a 128 échantillons qui ont été correctement classés comme positifs (classe positive).
+Il y a 43 échantillons qui ont été incorrectement classés comme positifs alors qu'ils sont réellement négatifs (FP).
+Il y a 265 échantillons qui ont été incorrectement classés comme négatifs alors qu'ils sont réellement positifs (FN).
+Notre modele n'est pas tres fort pour la prediction des valeurs correctements négatifs. D'ailleur c'est ce qu'on voit dans le rapport de classification.
+
+- Rapport de classification : 
 ![rapportClassif](https://github.com/LydiaOuam/TPDP/assets/84903904/4af53b5a-0054-4552-8979-61e15ab5db16)
 
 
