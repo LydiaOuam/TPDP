@@ -10,29 +10,47 @@ Balance : L'argent qui se trouve dans le compte bancaire.
 Tenure : L'ancienneté du client.
 ### Encodage des caractéristiques catégorielles en numérique
 On a besoin de transformer les valeurs en type chaine de caractere en type entier
-Gender => F = 1, M = 0
-Geography => France = 0, Spain = 1, Germany = 2
+- Gender => F = 1, M = 0
+- Geography => France = 0, Spain = 1, Germany = 2
 
 ### Division les données en ensembles d'entraînement et de test.
+```
+from sklearn.model_selection import train_test_split
+
+# splitting data
+X_train, X_test, y_train, y_test = train_test_split(
+                new_data.drop('Exited', axis=1),
+                new_data['Exited'],
+                test_size=0.2,
+                random_state=42)
+```
 ### Utilisation de StandardScaler pour mettre à l'échelle vos données.(Standarisation)
+```
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.fit_transform(X_test)
+```
 
 ### Préparation du modèle et entrainement
 
 
-- Utilisation le séquentiel de keras.models pour initialiser votre modèle ANN en le définissant comme une séquence de couches.
-- Ajoutez la couche d'entrée et la première couche cachée en utilisant la méthode add() .
-- Ajoutez une deuxième couche cachée composée de 6 unités.
-- Ajoutez la couche de sortie avec une unité binaire. N'oubliez pas, cette fois, l'activation sigmoïde fonction doit être utilisée.
+- Utilisation le séquentiel de keras.models pour initialiser le modèle ANN en le définissant comme une séquence de couches.
+- Ajout de la couche d'entrée et la première couche cachée en utilisant la méthode add().
+- Ajout une deuxième couche cachée composée de 6 unités.
+- Ajout de la couche de sortie avec une unité binaire. L'activation sigmoïde fonction doit être utilisée.
+- Ajustement du modèle et application de la validation croisée avec une taille de lot de 10. On a Répété 50 et 100 fois (époque = 50 ou 100) mais les résultats restent les memes.
 
+### Les prédictions.
+On a fait des prédictions sur les X_test qu'on a pas mis dans l'entrainement du modèle.
+Puis comme les résultat de la prédictions sont des réels entre 0 et 1, donc on a arrondit les résultats pour avoir 0 et 1. Enfin on a comparé les résultats obtenu du modèles avec les y_test qu'on mis de coté à partir du dataset.
 
+Explication des résultats de la mayrice de confusion et rapposrt de classification.
 
-Ajustez votre modèle et appliquez la validation croisée avec une taille de lot de 10. On a Répété 50 ou 100 fois (époque = 50 ou 100) mais les résultats restent les memes.
-
-Faites des prédictions.
-
- Évaluer le modèle à l'aide de la matrice de confusion et du rapport de classification.
  
- Prédire si le client avec les informations suivantes quittera la banque ou non :
+ ### Prédiction pour un exemple donné : 
  - Géographie : France
  - Pointage de crédit : 600
  - Sexe : Homme
