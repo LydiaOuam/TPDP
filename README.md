@@ -25,7 +25,7 @@ X_train, X_test, y_train, y_test = train_test_split(
                 random_state=42)
 ```
 ### Utilisation de StandardScaler pour mettre à l'échelle vos données.(Standarisation)
-```
+``` python
 from sklearn.preprocessing import StandardScaler
 
 scaler = StandardScaler()
