@@ -13,7 +13,7 @@ On a besoin de transformer les valeurs en type chaine de caractere en type entie
 - Gender => F = 1, M = 0
 - Geography => France = 0, Spain = 1, Germany = 2
 
-### Division les données en ensembles d'entraînement et de test.
+### Division des données en ensembles d'entraînement et de test.
 ``` python
 from sklearn.model_selection import train_test_split
 
@@ -47,7 +47,12 @@ X_test = scaler.fit_transform(X_test)
 On a fait des prédictions sur les X_test qu'on a pas mis dans l'entrainement du modèle.
 Puis comme les résultat de la prédictions sont des réels entre 0 et 1, donc on a arrondit les résultats pour avoir 0 et 1. Enfin on a comparé les résultats obtenu du modèles avec les y_test qu'on mis de coté à partir du dataset.
 
-Explication des résultats de la mayrice de confusion et rapposrt de classification.
+La matrice de confusion :
+![matrice](https://github.com/LydiaOuam/TPDP/assets/84903904/767f64b3-0d53-4028-8b26-868ad5127a45)
+
+Rapport de classification : 
+![rapportClassif](https://github.com/LydiaOuam/TPDP/assets/84903904/4af53b5a-0054-4552-8979-61e15ab5db16)
+
 
  
  ### Prédiction pour un exemple donné : 
