@@ -2,19 +2,19 @@
 ## Le problème des clients de la banque
 
 ### Chargement et inspection et nettoyages des données
-On a 14 colonnes et 10k lignes de data.
-On a supprimé les colonnes suivantes : RowNumber, CustomerId, Surname
-Explication de quelques colonnes : 
-CreditScore : c'est le pointage de crédit.
-Balance : L'argent qui se trouve dans le compte bancaire.
-Tenure : L'ancienneté du client.
+- On a 14 colonnes et 10k lignes de data.
+- On a supprimé les colonnes suivantes : RowNumber, CustomerId, Surname
+- Explication de quelques colonnes : 
+- CreditScore : c'est le pointage de crédit.
+- Balance : L'argent qui se trouve dans le compte bancaire.
+- Tenure : L'ancienneté du client.
 ### Encodage des caractéristiques catégorielles en numérique
 On a besoin de transformer les valeurs en type chaine de caractere en type entier
 - Gender => F = 1, M = 0
 - Geography => France = 0, Spain = 1, Germany = 2
 
 ### Division les données en ensembles d'entraînement et de test.
-```
+``` python
 from sklearn.model_selection import train_test_split
 
 # splitting data
