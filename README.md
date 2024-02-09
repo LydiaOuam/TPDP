@@ -50,10 +50,10 @@ La matrice de confusion :
 ![matrice](https://github.com/LydiaOuam/TPDP/assets/84903904/767f64b3-0d53-4028-8b26-868ad5127a45)
 
 #### Explication de la matrice de confusion  : 
-- Il y a 1564 échantillons qui ont été correctement classés comme négatifs (classe négative).
-- Il y a 128 échantillons qui ont été correctement classés comme positifs (classe positive).
-- Il y a 43 échantillons qui ont été incorrectement classés comme positifs alors qu'ils sont réellement négatifs (FP).
-- Il y a 265 échantillons qui ont été incorrectement classés comme négatifs alors qu'ils sont réellement positifs (FN).
+- Il y a 1564 échantillons qui ont été correctement classés comme négatifs (classe exited = 0 => le client reste).
+- Il y a 128 échantillons qui ont été correctement classés comme positifs (classe exited = 1 => le client va quitter).
+- Il y a 43 échantillons qui ont été incorrectement classés comme positifs alors qu'ils sont réellement négatifs (le modèle a predit que le client va quitter mais en réalité le client a resté).
+- Il y a 265 échantillons qui ont été incorrectement classés comme négatifs alors qu'ils sont réellement positifs (le modèle a predit que le client va rester mais en réalité le client quitte).
 Notre modele n'est pas très fort pour la prediction des valeurs correctements négatifs. D'ailleur c'est ce qu'on voit dans le rapport de classification.
 
 - Rapport de classification : 
