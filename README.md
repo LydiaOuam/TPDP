@@ -74,3 +74,7 @@ Notre modele n'est pas très fort pour la prediction des valeurs correctements n
  - Salaire estimé : 50000
    
  __Résultat__ : Le client ne quittera pas la banque
+ # Membres du groupe : 
+ - Kafia AIROUCHE
+ - Kenza OULMOU
+ - Lydia OUAMRANE
